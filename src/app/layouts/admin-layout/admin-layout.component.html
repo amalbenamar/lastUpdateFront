@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/dashboard">Admin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/admin/dashboard"><i class="fas fa-border-all"></i>&nbsp;&nbsp;Dashboard</a>
+          </li>
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-exclamation-circle"></i>&nbsp;Tickets
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item"routerLink="/admin/liste-ticket" > <i class="fas fa-ellipsis-h"></i>&nbsp;Liste de Tickets</a></li>
+              <li><a class="dropdown-item" routerLink="/admin/ajouter-ticket" ><i class="fas fa-plus"></i> &nbsp;Ajouter Ticket</a></li>
+            
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-users"></i>&nbsp;&nbsp;Utilisateurs
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/admin/techniciens"><i class="fas fa-user"></i>&nbsp;Techniciens</a></li>
+              <li><a class="dropdown-item" routerLink="/admin/clients"><i class="fas fa-user"></i>&nbsp;Clients</a></li>
+            
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-cog"></i>&nbsp;&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-bell"></i>&nbsp;&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"> <i class="fas fa-user-circle"></i>&nbsp;&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"> <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;</a>
+          </li>
+  
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

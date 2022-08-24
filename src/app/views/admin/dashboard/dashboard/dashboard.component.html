@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="search_warp">
+        <div class="search_box">
+            <input type="text" class="input" placeholder="Rechercher ...">
+            <div class="btn btn_common">
+                <i class=" icon fas fa-search fa-2xl"></i> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card card container">
+    <div class="card-body">
+     <table class="table container table-hover">
+        <td>
+            <div class="card c" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-exclamation-circle fa-2x"></i></h5>
+                   <h5 class=" text-center">Interventions</h5>
+                   <h5 class=" text-center"> <a routerLink="/admin/ajouter-ticket"> <i class=" l fas fa-plus "></i></a>&nbsp; ..</h5>
+                   
+                    
+                </div>
+            </div>
+                
+              
+        </td>
+        <td>
+            <div class="card c" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-users  fa-2x"></i></h5>
+                    <h5 class="card-title text-center">Techniciens</h5>
+                    <h5 class=" text-center"> <a routerLink="/admin/technicien"> <i class=" l fas fa-plus "></i></a>&nbsp; ..</h5>
+               
+                
+                  
+                </div>
+              </div>
+        </td>
+        <td>
+            <div class="card c" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><i class="fas fa-users  fa-2x"></i></h5>
+                   <h5 class="card-title text-center">Clients</h5>
+                   <h5 class=" text-center"> <a routerLink="/admin/client"> <i class=" l fas fa-plus "></i></a>&nbsp;..</h5>
+                </div>
+              </div>
+        </td>
+     </table>
+    </div>
+  </div>
+
+  <table class="table container table-hover">
+    <td>
+<div class="container" id="divChart">
+    <canvas id="myChart"></canvas>
+</div>
+</td>
+<td>
+    <div class="container" id="divchart">
+    <canvas id="chart"></canvas>
+</div>
+</td>
+  </table>

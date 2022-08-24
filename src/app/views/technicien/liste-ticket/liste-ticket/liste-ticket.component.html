@@ -1,0 +1,62 @@
+<div class="row my-2">
+
+  <div class="test col-md-6 text-center">
+    <a routerLink="/admin/ajouter-ticket">
+    <button  class="btn btn-outline-success btn-sm">
+      <i class="fas fa-plus"></i>&nbsp;
+        Nouveau Ticket
+      
+    </button>
+  </a>
+  </div>
+</div>
+
+<div class="form-outline mb-4">
+  <input  type="search"  [(ngModel)]="types"(ngModelChange)="search()" class="form-control" id="datatable-search-input" placeholder="Rechercher">
+ 
+</div>
+<div class="table-responsive">
+<table class="table table-hover md-2">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">ID</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Demandeur</th>
+      <!-- <th scope="col">Source de demande</th> -->
+      <th scope="col">Date de création</th>
+      <th scope="col">Type</th>
+      <th scope="col">Catégorie</th>
+      <!-- <th scope="col">Impact</th> -->
+      <!-- <th scope="col">Urgence</th> -->
+      <th scope="col">Priorité</th>
+      <th scope="col">Statut</th>
+      <th scope="col" >Description</th>
+      <th scope="col">Consulter</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of tickets" >
+    <th scope="row"><input type="checkbox"></th>
+    <td>{{ticket.id}}</td>
+    <td>{{ticket.title}}</td>
+    <td>{{ticket.requestedBy?.firstName}} {{ticket.requestedBy?.lastName}} {{ticket.requestedBy?.email}}</td>
+    <td>{{ticket.dateOpened}}</td>
+    <td>{{ticket.type?.name}}</td>
+    <td>{{ticket.category?.name}}</td>
+    <td>{{ticket.priority?.name}}</td>
+    <td>{{ticket.ticketStatus}}</td>
+    <td>{{ticket.description}}</td>
+      <td><button class="btn btn-outline-success btn-sm" (click)="detailsTicket(ticket.id)" ><i class="fas fa-eye"></i></button></td>
+      <td><button class="btn btn-outline-warning btn-sm " (click)="editTicket(ticket.id)" ><i class="fas fa-pencil-alt"></i></button></td>
+      <td><button class="btn btn-outline-danger btn-sm" (click)="deleteTicket(ticket.id)" ><i class="fas fa-trash-alt"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+

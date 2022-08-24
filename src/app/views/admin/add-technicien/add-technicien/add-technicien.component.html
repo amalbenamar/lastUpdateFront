@@ -1,0 +1,62 @@
+<form class="row g-3" [formGroup]="myform"  (ngSubmit)="onSubmit(user_,2)" >
+    <!-- (ngSubmit)="onAddUser()"  -->
+        <div class="form-group col-md-6">
+          <label class="labels">Nom</label>
+          <input type="text" class="form-control"  name="firstName"  id="firstName"  required [(ngModel)]="user_.firstName" formControlName="firstName" >
+        
+        <!-- <div class="alert alert-danger p-1 m-1" *ngIf="firstName.errors&& firstName.touched"><i class="fas fa-exclamation-triangle"></i>&nbsp;
+          Nom est obligatoire
+        </div> -->
+        </div>
+  
+        <div class="form-group col-md-6"> 
+          <label class="labels">Prénom</label>
+          <input  type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="user_.lastName" required formControlName="lastName" >
+          <!-- <div class="alert alert-danger p-1 m-1" *ngIf="lastName.errors&& lastName.touched" ><i class="fas fa-exclamation-triangle"></i>&nbsp;
+            Prénom est obligatoire
+          </div> -->
+        </div>
+       
+  
+        <div class="form-group col-md-6"> 
+          <label class="labels">Email</label>
+          <input  type="email" class="form-control" name="email" id="email" [(ngModel)]="user_.email"  formControlName="email" required>
+          <!-- <div class="alert alert-danger p-1 m-1" ><i class="fas fa-exclamation-triangle"></i>&nbsp;
+            Email est obligatoire
+          </div> -->
+        </div>
+      
+  
+        <div class="form-group col-md-6"> 
+          <label class="labels">Numéro de Téléphone</label>
+          <input  type="text" class="form-control" name="phone_number" id="phone_number" [(ngModel)]="user_.phone_number" formControlName="phone_number" required>
+          <!-- <div class="alert alert-danger p-1 m-1"  ><i class="fas fa-exclamation-triangle"></i>&nbsp;
+            Numéro de Téléphone est obligatoire
+          </div> -->
+        </div>
+        
+  
+        <div class="form-group col-md-6"> 
+          <label class="labels">Adresse</label>
+          <input  type="text" class="form-control" name="adress" id="adress" [(ngModel)]="user_.adress" formControlName="adress" required>
+          <!-- <div class="alert alert-danger p-1 m-1" ><i class="fas fa-exclamation-triangle"></i>&nbsp;
+            Adresse est obligatoire
+          </div> -->
+        </div>
+        <div class="form-group col-md-6"> 
+          <label class="labels">Mot de passe</label>
+          <input  type="password" class="form-control" name="password" id="password" [(ngModel)]="user_.password" formControlName="password" required>
+          <!-- <div class="alert alert-danger p-1 m-1" ><i class="fas fa-exclamation-triangle"></i>&nbsp;
+            Adresse est obligatoire
+          </div> -->
+        </div>
+        
+  
+       
+        <div class="mb-3 text-center">
+      <button    type="reset" class="btn btn-outline-secondary m-2"><i class="fas fa-times-circle"></i> &nbsp;Annuler</button>
+      <button    type="submit"  class="btn btn-outline-primary m-2"><i class="fas fa-check"></i> &nbsp;Ajouter</button>
+      
+    </div>
+  
+  </form>

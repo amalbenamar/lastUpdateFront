@@ -1,0 +1,23 @@
+
+
+.form-outline{
+    width:20%;
+    margin-left:10%;
+    margin-top:5px;
+   
+}
+.test{
+    margin-left:50%;
+    margin-top: 10px;
+}
+.labels{
+    font-weight: 600;
+    font-size: 16px;
+    color: #6b6b6b;
+}
+form {
+    max-width: 80%;
+    margin-top: 20px;
+    padding-left: 20%;
+  
+}

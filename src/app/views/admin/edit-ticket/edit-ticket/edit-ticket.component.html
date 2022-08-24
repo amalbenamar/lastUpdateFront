@@ -1,0 +1,71 @@
+<form class="row g-3"  #addForm="ngForm" (ngSubmit)="onAddTicket(addForm)">
+  <div class="col-md-6">
+    <label class="labels" for="title"  >Titre</label>
+    <input type="text" class="form-control"required  id="title" name="title" [(ngModel)]="t.title">
+  </div>
+
+  <div class="col-md-6">
+    <label class="labels" for="date_creation">Date de création</label>
+    <input type="date" class="form-control" id="date_creation" name="date_creation" required [value]="TodayDate">
+  </div>
+
+  <div class="col-md-6">
+    <label class="labels" for="requestedBy">Demandeur</label>
+    <select   class="form-select" id="requestedBy" name="requestedBy" required [(ngModel)]="t.requestedBy">
+      <option *ngFor="let user of users" [value]="user.id">{{user.firstName}}  {{user.lastName}} </option>
+    </select>
+  </div>
+
+  <div class="col-md-6">
+          <label class="labels" for="priority">Priorité</label> 
+            <select class="form-select" id="priority" name="priority" [(ngModel)]="t.priority"  >
+                <option *ngFor="let priority of prioritys" [value]="priority.id">{{priority.name}}</option>
+            </select>
+         
+  </div>
+
+  <div class="col-md-6">
+          <label class="labels" for="type">Type</label>
+          <select class="form-select" id="type" name="type" [(ngModel)]="t.type">
+              <option *ngFor="let type of types" [value]="type.id" > {{type.name}}</option>
+          </select>
+  </div>
+
+  <div class="col-md-6">
+            <label class="labels" for="category">Catégorie</label>
+            <select  class="form-select" id="category" name="category" required  [(ngModel)]="t.category">
+                <option *ngFor="let categorie of categories" [value]="categorie.id" > {{categorie.name}}</option>
+             </select>
+  </div>
+
+
+
+  <div class="col-md-6">
+        <label class="labels" for="statut">Statut</label>
+        <select  class="form-select" id="statut" name="statut" required  [(ngModel)]="t.ticketStatus">
+           <option *ngFor="let statut of satauts" [value]="statut.id"  >{{statut.name}}</option>
+         </select>
+   
+  </div>
+  <div class="col-md-6">
+    <label class="labels" for="assignedTo">Attribué à</label>
+    <select class="form-select" id="assignedTo" name="assignedTo" required  [(ngModel)]="t.assignedTo">
+      <option *ngFor="let user of assignedUsers" [value]="user.id">{{user.firstName}}  {{user.lastName}} </option>
+    </select>
+  </div>
+
+  <div class=" mb-3"> 
+    <label class="labels" for="description">Description</label>
+    <div class="textarea_style">
+      <textarea class="textarea" id="description" name="description" rows="2" cols="85"
+      maxlength="100" minlength="3" placeholder=""  [(ngModel)]=t.description></textarea>
+    </div>
+    </div>
+  </form>
+
+    <div class="mb-3 text-center m-4 ">
+  <a routerLink="/admin/liste-ticket"><button type="button" class="btn btn-secondary m-2"><i class="fas fa-times-circle"></i> &nbsp;Annuler</button></a>
+  <button  (click)=" onAddTicket(addForm)" type="button" class="btn btn-outline-warning"><i class="fas fa-retweet"></i>&nbsp;Modifier</button>
+</div>
+
+

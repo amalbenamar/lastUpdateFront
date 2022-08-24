@@ -1,0 +1,12 @@
+.card{
+    margin-top:50px;
+    width: 70%;
+    border-radius:40px;
+    border: 1px solid  #8e8e8e;
+    
+}
+span{
+    color:#000080;
+    font-size: large;
+    
+}

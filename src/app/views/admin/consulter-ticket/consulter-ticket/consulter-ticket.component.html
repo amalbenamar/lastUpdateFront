@@ -1,0 +1,77 @@
+
+    <div class="card card container" *ngIf="dataObject" >
+        <div >
+            <div class="text-center fs-5 fst-italic bg-success p-2 text-dark bg-opacity-10  m-3">
+                <h3> Tiket-ID{{dataObject.id}}</h3> 
+                <h3> Tiket-{{dataObject.title}}</h3> 
+           </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Date de création</td>
+                    <td  class="w-25">{{dataObject.dateOpened}} </td>
+                    <td class="bg-success p-2 text-dark bg-opacity-10 w-25">Par</td>
+                    <td class="w-25"><span>{{dataObject.createdBy.firstName}}</span></td>
+                   
+                </tr>
+                <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Dernière modification</td>
+                    <td  class="w-25">  par <span>{{dataObject.assignedTo.firstName}}</span> </td>
+                  
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Attribué à</td>
+                    <td  class="w-25"> <span>{{dataObject.assignedTo.firstName}}</span> </td>
+                </tr>
+                <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Temps de prise en charge</td>
+                    <td  class="w-25"> </td>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Temps de résoultion</td>
+                    <td  class="w-25"> </td>
+                  
+                    
+                </tr>
+                <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Date de résolution</td>
+                    <td  class="w-25"> </td>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Date de fermeture</td>
+                    <td  class="w-25"> </td>
+                  
+                    
+                </tr>
+                <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Type</td>
+                    <td  class="w-25"> {{dataObject.type.name}} </td>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Catégorie</td>
+                    <td  class="w-25"> {{dataObject.category.name}}  </td>
+                  
+                    
+                </tr>
+                <!-- <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Impact</td>
+                    <td  class="w-25"> </td>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Urgence</td>
+                    <td  class="w-25">  </td>
+                  
+                    
+                </tr> -->
+                <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Ticket_status</td>
+                    <td  class="w-25">{{dataObject.ticketStatus}}</td>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Priorité</td>
+                    <td  class="w-25"> {{dataObject.priority.name}} </td>
+                </tr>
+                <tr>
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Description</td>
+                    <td  class="w-25"> {{dataObject.description}}</td>
+                   
+                    <td class=" bg-success p-2 text-dark bg-opacity-10 w-25">Source de la demande</td>
+                    <td  class="w-25">  </td>
+                </tr>
+              </table>
+              <div class="card-footer text-muted">
+                <div class="text-center">
+                   <a routerLink="/admin/rapport"> <button class="btn btn-outline text-dark  bg-success  bg-opacity-10" type="button"><i class="fas fa-file"></i>&nbsp;Rédiger Rapport</button></a>
+                  </div>
+              </div>
+        </div>
+            

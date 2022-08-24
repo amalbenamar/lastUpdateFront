@@ -1,0 +1,49 @@
+<div class="row my-2">
+
+  <div class="test col-md-6 text-center">
+   <a routerLink="/admin/add-technicien"> <button  class="btn btn-outline-success btn-sm">
+      <i class="fas fa-plus"></i>&nbsp;
+        Nouveau Technicien
+    </button></a>
+  </div>
+</div>
+
+<div class="form-outline mb-4">
+  <input name="prenom" [(ngModel)]="name"(ngModelChange)="search()" type="search" class="form-control" id="datatable-search-input" placeholder="Rechercher">
+ 
+</div>
+
+
+<table class="table table-hover md-2">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Numéro de téléphone</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+      <tr *ngFor="let user of users" >
+        <td scope="row" ><input type="checkbox"></td>
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone_number}}</td>
+        <td>{{user.adress}}</td>
+   
+      <td> <a routerLink="/admin/edit-technicien/{{user.id}}"><button type="button" class="btn btn-outline-warning"><i class="fas fa-pencil-alt"></i></button></a></td>
+      <td><button type="button" (click)="deleteUser(user.id)" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button></td>
+    </tr>
+
+  
+
+  </tbody>
+</table>

@@ -1,0 +1,17 @@
+.my-container{
+    margin-top: 200px;
+    max-width: 50%;
+   
+}
+.card-header {
+    background-color: #c9eed7;
+}
+.btn-primary{
+    background-color:#c9eed7;
+    border: none;
+    color:black;
+}
+.btn-link{
+    color: #6fba8c;
+}
+
