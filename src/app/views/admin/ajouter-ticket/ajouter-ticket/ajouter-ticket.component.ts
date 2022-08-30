@@ -56,6 +56,7 @@ export class AjouterTicketComponent implements OnInit {
   types:TypeTicket[]=[];
   prioritys:Priority[]=[];
   satauts:Statuts[]=[];
+  demandeur:any;
    constructor(public TicketService:TicketService,private route:Router,private userService: UserService,
                private categorieService: CategorieService,private statutsService: StatutsService,
                 private typeService:TypeService,private priorityService:PriorityService) { }
@@ -108,9 +109,7 @@ export class AjouterTicketComponent implements OnInit {
     let ticket : Tickets = addForm.value;
   
 
-    //ticket.ticketStatus = this.satauts.filter(elem => elem.id == ticket.ticketStatus)[0];
-
-
+    ticket.ticketStatus = this.satauts.filter(elem => elem.id == ticket.ticketStatus)[0];
     ticket.priority = this.prioritys.filter(elem => elem.id == ticket.priority)[0];
     ticket.type = this.types.filter(elem => elem.id == ticket.type)[0];
     ticket.category = this.categories.filter(elem => elem.id == ticket.category)[0];
@@ -126,6 +125,7 @@ export class AjouterTicketComponent implements OnInit {
     this.route.navigate(['/admin/liste-ticket']);
     
   }
+
 
    date1= new Date();
    currentYear=this.date1.getUTCFullYear();

@@ -14,7 +14,7 @@ export class ListeTicketComponent implements OnInit {
 
 
   tickets:Tickets[]=[];
-  types:any;
+  createdBy:any;
   t:Tickets={
     id:'',
     title:'',
@@ -60,11 +60,11 @@ export class ListeTicketComponent implements OnInit {
     })
   }
   search(){
-    if(this.types ==""){
+    if(this.createdBy==""){
       this.ngOnInit();
     }else{
       this.tickets=this.tickets.filter(data=>{
-        return data.type.toLocaleLowerCase().match(this.types.toLocaleLowerCase());
+        return data.createdBy.firstName.toLocaleLowerCase().match(this.createdBy.toLocaleLowerCase());
       })
     }
   }
@@ -76,6 +76,7 @@ export class ListeTicketComponent implements OnInit {
   editTicket(id:any){
     this.route.navigate(['/admin/edit-ticket/'+id])
   }
+  
   date1= new Date();
   currentYear=this.date1.getUTCFullYear();
   currentMonth=this.date1.getUTCMonth()+1;
